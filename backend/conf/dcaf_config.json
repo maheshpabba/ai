@@ -1,0 +1,21 @@
+{
+    "Users":{
+            "index":"email", 
+            "record":[{}]
+        },
+    "Sessions":{
+        "record":[{}]
+    },
+    "Files":{
+        "index":"User",
+        "record":[{}]
+    },
+    "Statistics":{
+        "index":"UserName",
+        "record":[{}]
+    },
+    "Chats":{
+        "index":"Username",
+        "record":[{}]
+    }
+}

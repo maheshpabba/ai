@@ -1,0 +1,103 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Atmosphere Semantic Colors */
+  --cisco-blue: #107daa;
+  --atm-primary: #00bceb;
+  --atm-secondary: #0d274d;
+  --atm-tertiary: #1b1c1d;
+
+  --input-size-xs: 1.6rem;
+  --input-size-sm: 2rem;
+  --input-size-md: 2.4rem;
+  --input-size-lg: 3rem;
+}
+
+
+/* Adjust input sizes */
+.btn,
+.btn-md {
+  border-radius: 2rem;
+  height: var(--input-size-md);
+  min-height: var(--input-size-md);
+}
+
+.btn-xs {
+  border-radius: 2rem;
+  height: var(--input-size-xs);
+  min-height: var(--input-size-xs);
+}
+
+.btn-sm {
+  border-radius: 2rem;
+  height: var(--input-size-sm);
+  min-height: var(--input-size-sm);
+}
+
+.btn-lg {
+  border-radius: 2rem;
+  height: var(--input-size-lg);
+  min-height: var(--input-size-lg);
+}
+
+.btn-square,
+.btn-circle {
+  width: var(--input-size-md);
+}
+
+.btn-square.btn-xs,
+.btn-circle.btn-xs {
+  width: var(--input-size-xs);
+}
+
+.btn-square.btn-sm,
+.btn-circle.btn-sm {
+  width: var(--input-size-sm);
+}
+
+.btn-square.btn-lg,
+.btn-circle.btn-lg {
+  width: var(--input-size-lg);
+}
+
+.file-input,
+.select,
+.input {
+  height: var(--input-size-md);
+}
+
+.file-input.file-input-xs,
+.select.select-xs,
+.input.input-xs {
+  height: var(--input-size-xs);
+}
+
+.file-input.file-input-sm,
+.select.select-sm,
+.input.input-sm {
+  height: var(--input-size-sm);
+}
+
+.file-input.file-input-lg,
+.select.select-lg,
+.input.input-lg {
+  height: var(--input-size-lg);
+}
+
+.btn,
+.input {
+  border-width: 2px;
+}
+
+
+[data-theme=light] .btn-secondary {
+  border-color: var(--bg-primary);
+  background: var(--bg-base-200);
+}
+
+[data-theme=light] .label-text {
+  font-weight: 600;
+  padding-bottom: 0.25rem;
+}

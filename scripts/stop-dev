@@ -1,0 +1,7 @@
+#!/bin/bash
+
+source setenv.sh
+
+docker-compose -f ${ROOT_DIR}/docker-compose.dev.yml down
+
+docker system prune -f

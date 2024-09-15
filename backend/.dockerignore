@@ -1,0 +1,9 @@
+.git
+.gitignore
+*.png
+.gitlab-ci.yml
+example*
+test.*
+env*
+runtime_outs/
+new_gen*

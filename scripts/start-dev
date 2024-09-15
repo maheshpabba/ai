@@ -1,0 +1,9 @@
+#!/bin/bash
+# Shortcut script for runnig the docker dev server
+# set -e
+. setenv.sh 
+
+docker-compose -f ${ROOT_DIR}/docker-compose.dev.yml up -d --build
+
+# trap "docker-compose -f docker-compose.dev.yml down" INT
+# docker-compose -f docker-compose.dev.yml logs -f server

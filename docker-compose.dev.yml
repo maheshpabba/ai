@@ -1,0 +1,56 @@
+services:
+  # frontend:
+  #   image: containers.cisco.com/dcai/llm-ui:develop-latest
+  #   build:
+  #     context: ./frontend
+  #     dockerfile: Dockerfile
+  #   hostname: frontend
+  #   container_name: frontend
+  #   depends_on:
+  #     - db
+  #   ports:
+  #     - 80:80
+  #     - 443:443
+  #   volumes:
+  #     # Host docker forwarding
+  #     - /var/run/docker.sock:/var/run/docker.sock
+  #     # App code
+  #     - ./frontend:/app
+  #     - ./secrets/certs:/etc/nginx/ssl
+  backend:
+    image: containers.cisco.com/dcai/llm-server:develop-latest
+    build: 
+      context: ./backend
+      dockerfile: Dockerfile
+    hostname: backend
+    container_name: backend
+    ports:
+      - 5000:5000
+    expose:
+        - "5000"
+    volumes:
+      # Host docker forwarding
+      - /var/run/docker.sock:/var/run/docker.sock
+      # App code
+      - ./backend:/app
+      - ./backend/runtime_outs:/app/runtime_outs
+      - /gesdcllm:/gesdcllm
+      - ./secrets/configs/config1.json:/app/secrets/configs/config1.json
+  db:
+    image: mongodb/mongodb-atlas-local:latest
+    hostname: database
+    container_name: database
+    environment:
+      - MONGODB_INITDB_ROOT_USERNAME=admin
+      - MONGODB_INITDB_ROOT_PASSWORD=GeSdClLm
+    ports:
+      - 27019:27017
+    # entrypoint: /home/scripts/start-atlas.sh
+    volumes:
+      # - ./db:/data:rw
+      - mongodb_config:/data/configdb
+      - mongodb_data:/data/db
+volumes:
+  mongodb_data:
+  mongodb_config:
+
